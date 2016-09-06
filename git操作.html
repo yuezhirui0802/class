@@ -1,0 +1,40 @@
+1.查看git是否安装成功： git version
+可以打印出你的git 版本
+2.先在github官网上注册：记住用户名，邮箱和密码
+3.配置git
+git config --global user.name "github上的用户名"
+git config --global user.email "github上的邮箱"
+//who are you? ...代表你没有配置成功；
+4.建立一个本地仓库：
+    1）手动创建一个文件夹
+    2）git init
+5.提交本地仓库：
+    1）本地仓库中一定要有内容；--提交什么？
+    2）先建立一个远程仓库：--往哪提交？
+    3)链接远程仓库：链接远程通道的命令：git remote add 通道名称 通道地址
+        git remote add origin 远程仓库的地址
+        git remote add origin https://github.com/leilei1238/test1223.git
+        查看是否连接上远程仓库：git remote -v
+
+    4）git 工作流：
+        1.git add .    / test11111.txt
+        2.git commit -m"注释"     注释：可以是英文或汉字，一定要写
+        3.git push origin master
+6.把老师的讲义down到本地：
+    1）把老师的讲义地址，复制到自己github的地址栏
+    2）fork
+    3）拷贝自己github上fork过来的讲义地址；
+    4）在本地新建一个文件夹，进入该文件夹的命令行； git clone 地址
+    5）关于老师讲义的更新：
+        1）连接老师讲义的远程通道 ： git remote add teacher 老师讲义的github地址；
+        测试：git remote -v
+        2）当老师内容更新的时候；
+        git remote update teacher
+        git pull teacher master //把已经更新的远程通道的内容，拉倒本地仓库
+    6）（如何推送自己的项目到主项目中）学员如何提交作业给老师
+        1)通过git工作流，把自己本地仓库的内容提交到自己的远程仓库
+             git add .
+             git commit -m"注释"
+             git push origin master
+        2)推送到自己远程后，在远程点击new pull request按钮
+    7）老师收到你们请求合并的代码后，会进行merge合并；
